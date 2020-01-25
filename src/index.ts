@@ -1,5 +1,6 @@
 namespace Smart {
-  export function createElement(tag, attrs, children): Element {
+  export interface Element {}
+  export function createElement(tag, attrs, children): Smart.Element {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
