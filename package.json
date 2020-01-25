@@ -1,0 +1,24 @@
+{
+  "name": "smart-element",
+  "version": "1.1.0",
+  "description": "",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "unpkg": "./dist/bundle.js",
+  "scripts": {
+    "tsc": "tsc",
+    "webpack": "webpack-cli"
+  },
+  "author": "hramini",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "8.0.6",
+    "typescript": "3.7.3",
+    "webpack": "4.41.1",
+    "webpack-cli": "3.3.9"
+  },
+  "devDependencies": {
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.6"
+  }
+}
