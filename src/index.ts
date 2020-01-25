@@ -1,5 +1,5 @@
 namespace Smart {
-  export function createElement(tag, attrs, children) {
+  export function createElement(tag, attrs, children): Element {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
