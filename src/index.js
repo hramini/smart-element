@@ -1,9 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Smart = /** @class */ (function () {
-    function Smart() {
-    }
-    Smart.prototype.createElement = function (tag, attrs, children) {
+var Smart;
+(function (Smart) {
+    function createElement(tag, attrs, children) {
         if (typeof tag !== "string") {
             return new tag().render();
         }
@@ -28,8 +26,8 @@ var Smart = /** @class */ (function () {
             }
             return element;
         }
-    };
-    return Smart;
-}());
-exports.default = Smart;
+    }
+    Smart.createElement = createElement;
+})(Smart || (Smart = {}));
+module.exports = Smart;
 //# sourceMappingURL=index.js.map

@@ -1,9 +1,5 @@
-declare global {
-  class Smart {}
-}
-
-export default class Smart {
-  public createElement(tag, attrs, children) {
+namespace Smart {
+  export function createElement(tag, attrs, children) {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
@@ -31,3 +27,5 @@ export default class Smart {
     }
   }
 }
+
+export = Smart;
