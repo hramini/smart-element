@@ -1,10 +1,9 @@
 namespace Smart {
-  export interface Element {}
-  export function createElement(tag, attrs, children): Smart.Element {
+  export function createElement(tag, attrs, children): SmartElement.Node {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
-      const element = document.createElement(tag);
+      const element: Element = document.createElement(tag);
 
       for (let name in attrs) {
         if (name && attrs.hasOwnProperty(name)) {
@@ -24,7 +23,8 @@ namespace Smart {
             : child
         );
       }
-      return element;
+      // return element;
+      return {} as SmartElement.Node;
     }
   }
 }
