@@ -22,7 +22,8 @@ namespace Smart {
       console.log("tag", tag);
       console.log("attrs", attrs);
       console.log("children", children);
-      // const element: SmartNode = document.createElement(tag);
+      console.log("arguments", arguments);
+      // const element: Element = document.createElement(tag);
       // for (let name in attrs) {
       //   if (name && attrs.hasOwnProperty(name)) {
       //     let value = attrs[name];
