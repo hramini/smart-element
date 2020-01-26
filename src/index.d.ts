@@ -14,6 +14,6 @@ declare namespace Smart {
         key?: any;
         children?: Smart.SmartNode | Smart.SmartNode[] | string | string[] | number;
     }
-    function createElement(tag: any, attrs: any, children: any): SmartNode;
+    function createElement(tag: any, attrs: any, ...children: any[]): SmartNode;
 }
 export = Smart;

@@ -15,14 +15,18 @@ namespace Smart {
     key?: any;
     children?: Smart.SmartNode | Smart.SmartNode[] | string | string[] | number;
   }
-  export function createElement(tag, attrs, children): SmartNode {
+  export function createElement(tag, attrs, ...children): SmartNode {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
       console.log("tag", tag);
       console.log("attrs", attrs);
       console.log("children", children);
-      console.log("arguments", arguments);
+      return {
+        type: tag,
+        props: attrs,
+        children
+      };
       // const element: Element = document.createElement(tag);
       // for (let name in attrs) {
       //   if (name && attrs.hasOwnProperty(name)) {

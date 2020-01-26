@@ -1,7 +1,11 @@
 "use strict";
 var Smart;
 (function (Smart) {
-    function createElement(tag, attrs, children) {
+    function createElement(tag, attrs) {
+        var children = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            children[_i - 2] = arguments[_i];
+        }
         if (typeof tag !== "string") {
             return new tag().render();
         }
@@ -9,7 +13,11 @@ var Smart;
             console.log("tag", tag);
             console.log("attrs", attrs);
             console.log("children", children);
-            console.log("arguments", arguments);
+            return {
+                type: tag,
+                props: attrs,
+                children: children
+            };
             // const element: Element = document.createElement(tag);
             // for (let name in attrs) {
             //   if (name && attrs.hasOwnProperty(name)) {
