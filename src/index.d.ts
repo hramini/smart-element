@@ -12,6 +12,7 @@ declare namespace Smart {
         type?: string;
         props?: any;
         key?: any;
+        children: HTMLCollection;
     }
     function createElement(tag: any, attrs: any, children: any): SmartNode;
 }

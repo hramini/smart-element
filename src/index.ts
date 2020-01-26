@@ -13,6 +13,7 @@ namespace Smart {
     type?: string;
     props?: any;
     key?: any;
+    children: HTMLCollection;
   }
   export function createElement(tag, attrs, children): SmartNode {
     if (typeof tag !== "string") {
