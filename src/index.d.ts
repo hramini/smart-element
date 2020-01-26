@@ -8,12 +8,11 @@ declare global {
     }
 }
 declare namespace Smart {
-    interface SmartNode {
+    interface SmartNode extends Element {
         type?: string;
         props?: any;
         key?: any;
-        children?: Smart.SmartNode | Smart.SmartNode[] | string | string[] | number;
     }
-    function createElement(tag: any, attrs: any, children: any): Smart.SmartNode;
+    function createElement(tag: any, attrs: any, children: any): SmartNode;
 }
 export = Smart;

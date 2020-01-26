@@ -24,7 +24,10 @@ var Smart;
                     ? document.createTextNode(child.toString())
                     : child);
             }
-            return {};
+            element.type = element.tagName;
+            element.props = element.attributes;
+            element.key = element.attributes.getNamedItem("Key") || null;
+            return element;
         }
     }
     Smart.createElement = createElement;

@@ -9,17 +9,16 @@ declare global {
 }
 
 namespace Smart {
-  export interface SmartNode {
+  export interface SmartNode extends Element {
     type?: string;
     props?: any;
     key?: any;
-    children?: Smart.SmartNode | Smart.SmartNode[] | string | string[] | number;
   }
-  export function createElement(tag, attrs, children): Smart.SmartNode {
+  export function createElement(tag, attrs, children): SmartNode {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
-      const element = document.createElement(tag);
+      const element: SmartNode = document.createElement(tag);
 
       for (let name in attrs) {
         if (name && attrs.hasOwnProperty(name)) {
@@ -39,7 +38,10 @@ namespace Smart {
             : child
         );
       }
-      return {} as Smart.SmartNode;
+      element.type = element.tagName;
+      element.props = element.attributes;
+      element.key = element.attributes.getNamedItem("Key") || null;
+      return element;
     }
   }
 }
