@@ -7,8 +7,8 @@ var Smart;
         }
         else {
             console.log("tag", tag);
-            console.log("tag", attrs);
-            console.log("tag", children);
+            console.log("attrs", attrs);
+            console.log("children", children);
             // const element: SmartNode = document.createElement(tag);
             // for (let name in attrs) {
             //   if (name && attrs.hasOwnProperty(name)) {
