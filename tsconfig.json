@@ -5,8 +5,8 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "importHelpers": true,
-    "esModuleInterop": true
-    // "declaration": true
+    "esModuleInterop": true,
+    "declaration": true
   },
   "exclude": ["node_modules"]
 }
