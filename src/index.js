@@ -24,7 +24,6 @@ var Smart;
                     ? document.createTextNode(child.toString())
                     : child);
             }
-            // return element;
             return {};
         }
     }
