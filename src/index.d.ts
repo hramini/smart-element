@@ -1,19 +1,19 @@
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            div: Smart.Node;
-            p: Smart.Node;
-            b: Smart.Node;
+            div: Smart.SmartNode;
+            p: Smart.SmartNode;
+            b: Smart.SmartNode;
         }
     }
 }
 declare namespace Smart {
-    interface Node {
+    interface SmartNode {
         type?: string;
         props?: any;
         key?: any;
-        children?: Smart.Node | Smart.Node[] | string | string[] | number;
+        children?: Smart.SmartNode | Smart.SmartNode[] | string | string[] | number;
     }
-    function createElement(tag: any, attrs: any, children: any): Smart.Node;
+    function createElement(tag: any, attrs: any, children: any): Smart.SmartNode;
 }
 export = Smart;
