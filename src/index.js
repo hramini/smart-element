@@ -1,4 +1,5 @@
 "use strict";
+var tslib_1 = require("tslib");
 var Smart;
 (function (Smart) {
     function createElement(tag, attrs) {
@@ -15,8 +16,7 @@ var Smart;
             console.log("children", children);
             return {
                 type: tag,
-                props: attrs,
-                children: children
+                props: tslib_1.__assign(tslib_1.__assign({}, attrs), { children: children })
             };
             // const element: Element = document.createElement(tag);
             // for (let name in attrs) {

@@ -24,8 +24,7 @@ namespace Smart {
       console.log("children", children);
       return {
         type: tag,
-        props: attrs,
-        children
+        props: { ...attrs, children }
       };
       // const element: Element = document.createElement(tag);
       // for (let name in attrs) {
