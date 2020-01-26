@@ -1,5 +1,18 @@
+declare global {
+  namespace JSX {
+    export interface IntrinsicElements {
+      [elementName: string]: Smart.Node;
+    }
+  }
+}
 namespace Smart {
-  export function createElement(tag, attrs, children): SmartElement.Node {
+  export interface Node {
+    type?: string;
+    props?: any;
+    key?: any;
+    children?: Smart.Node | Smart.Node[] | string | string[] | number;
+  }
+  export function createElement(tag, attrs, children): Smart.Node {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
@@ -24,7 +37,7 @@ namespace Smart {
         );
       }
       // return element;
-      return {} as SmartElement.Node;
+      return {} as Smart.Node;
     }
   }
 }
