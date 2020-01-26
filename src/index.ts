@@ -1,30 +1,21 @@
 declare global {
   namespace JSX {
     export interface IntrinsicElements {
-      div: Smart.Element;
-      p: Smart.Element;
-      b: Smart.Element;
+      div: Smart.Node;
+      p: Smart.Node;
+      b: Smart.Node;
     }
-  }
-  namespace Smart {
-    export interface Element {
-      type?: string;
-      props?: any;
-      key?: any;
-      children?: Smart.Element | Smart.Element[] | string | string[] | number;
-    }
-    export function createElement(tag, attrs, children): Smart.Element;
   }
 }
 
 namespace Smart {
-  export interface Element {
+  export interface Node {
     type?: string;
     props?: any;
     key?: any;
-    children?: Smart.Element | Smart.Element[] | string | string[] | number;
+    children?: Smart.Node | Smart.Node[] | string | string[] | number;
   }
-  export function createElement(tag, attrs, children): Smart.Element {
+  export function createElement(tag, attrs, children): Smart.Node {
     if (typeof tag !== "string") {
       return new tag().render();
     } else {
@@ -48,7 +39,7 @@ namespace Smart {
             : child
         );
       }
-      return {};
+      return {} as Smart.Node;
     }
   }
 }

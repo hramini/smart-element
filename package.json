@@ -7,7 +7,8 @@
   "unpkg": "./dist/bundle.js",
   "scripts": {
     "tsc": "tsc",
-    "webpack": "webpack-cli"
+    "webpack": "webpack-cli",
+    "git": "tsc && webpack-cli && git add . && git commit -am 's' && git push"
   },
   "author": "hramini",
   "license": "ISC",
